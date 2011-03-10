@@ -1,0 +1,21 @@
+h1. fits-service
+
+This service allows you to post a url that points to a file.  The service will then download that file, run it through FITS and return the FITS metadata.
+
+Example:
+
+This would generate FITS metadata for the content of the "original" datastream in a Fedora object with pid chagneme:20
+
+http://localhost:3000/identify?url=http://localhost:8983/fedora/objects/changeme:20/datastreams/original/content
+
+h2. Known Issues
+
+This is a really rough first pass.  Off the top of my head:
+
+* Should be separated into a gem that wraps FITS & a sinatra app that uses the gem
+* hard-coded assumption that FITS is installed at "/usr/local/fits-0.4.3/fits.sh"
+* uses Windows-incompatible file paths
+
+h2. Acknowledgements
+
+Created by "Matt Zumwalt":http://yourmediashelf.com/who-we-are/matt-zumwalt/ of "MediaShelf":http://yourmediahself.com, 2011
